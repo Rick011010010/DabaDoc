@@ -16,11 +16,11 @@ const Home = () => {
 
   
   return (
-    <div className=" ">
+    <div className="bg-black w-screen h-screen ">
 
 
       <Head>
-        <title>InstaKoora</title>
+        <title>dabaDoc</title>
         <link rel="icon" href="/LOGO INSSSSS.png" />
         <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@1,800&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet"></link>
@@ -33,19 +33,9 @@ const Home = () => {
 
 
 
-      <Navbar/>
 
-      <div className='md:hidden flex justify-center relative' >
-        <Image src="/IN back 2.jpg"  width={1920} height={3450}/>
-        <Login />
-        <AboutUsTele />
-        <LoginMobile/>
-        
-      </div>
-
+      
       <div className='hidden md:flex  xl:h-[800px] 2xl:h-[900px] w-screen md:h-[700px]' >
-        <Image src="/bg dark mode.jpg" width={1920} height={700}   />
-        <Login />
         <About />
       </div>
 
@@ -56,19 +46,14 @@ const Home = () => {
 
 
 
-      <div>
-        <HowWork />
-      </div>
+      
 
 
 
 
 
 
-      <div className='w-screen'>
-        <Footer />
-
-      </div>
+      
 
 
       

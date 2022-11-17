@@ -1,13 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  images: {
-    domains: [
-      'images.unsplash.com', 'openweathermap.org'
-    ]
-  }
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 }
 
