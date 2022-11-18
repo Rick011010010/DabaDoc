@@ -14,6 +14,8 @@ function QuesModel({ question, postQus, setPostQus }) {
     const [position, setPosition] = useState([])
     console.log(position[0]?.localisation, "sssssssssssssssssssss")
 
+    
+
 
 
 

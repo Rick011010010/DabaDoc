@@ -14,6 +14,8 @@ function Sidebar() {
 
     const [questions, setQuestions] = useState([])
 
+    const [postQus, setPostQus] = useState(false)
+
 
 
 
@@ -49,7 +51,7 @@ function Sidebar() {
         };
 
         fetchQuestion();
-    }, []);
+    }, [postQus]);
 
 
 
@@ -98,11 +100,13 @@ function Sidebar() {
             </div>
 
             <div className="hidden md:flex bg-white text-black/70 rounded-lg overflow-hidden flex-col space-y-2 pt-2.5 h-96 sticky top-1 border border-gray-300 ">
+                <h1 className=' text-xl text-center font-bold'>My Favorites</h1>
                 <div className="text-center overflow-auto md:h-[600px]">
+
                     <ul className=" flex flex-col gap-3">
                         {questions.map((question) => (
 
-                            <QuestFav question={question} key={question._id}  />
+                            <QuestFav question={question} key={question._id} postQus={postQus} setPostQus={setPostQus} />
 
                         ))}
 

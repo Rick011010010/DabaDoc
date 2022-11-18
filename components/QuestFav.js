@@ -8,9 +8,11 @@ function QuesModel({ question, postQus, setPostQus }) {
 
     const { data: session, status } = useSession();
 
+    
+
     const deletequestion = async () => {
 
-        const response = await fetch(`/api/questions/${question._id}`, {
+        const response = await fetch(`/api/favQuestions/${question._id}`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" },
         });
