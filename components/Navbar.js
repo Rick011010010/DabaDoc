@@ -24,18 +24,16 @@ function Navbar() {
                 <div class=" px-2 sm:px-4 lg:px-8">
                     <div class="relative flex items-center justify-between h-16">
                         <div class="flex items-center px-2 lg:px-0">
-                            <div class="flex">
-                                <img class="block lg:hidden h-20 w-28" src="/LOGO INSSSSS.png" alt="Workflow/" />
-                                <img class="hidden lg:block h-20 w-28 p-0" src="/LOGO INSSSSS.png" alt="Workflow" />
-                                <h1 className='text-[#24d450] hidden lg:block text-4xl pt-5'>InstaKoora</h1>
+                            <div class="flex py-10">
+                                
+                                <h1 className='text-[#24d450] hidden lg:block text-4xl pt-5 py-5'>Ask Your neighbours</h1>
                             </div>
                             <div class="hidden lg:block lg:ml-6">
                                 <div class="flex space-x-4">
                                     {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
                                     <a href="#" class="bg-gray-900 text-[#00d8ff]  px-3 py-2 rounded-md text-lg font-medium flex"><AiFillHome size={25} />Home</a>
-                                    <a href="#" class="text-[#00d8ff] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium flex"><HiUserGroup size={25} />Teams</a>
                                     <a href="#" class="text-[#00d8ff] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium flex"><GoLocation size={25}/>Position</a>
-                                    <a href="#" class="text-[#00d8ff] hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-lg font-medium flex">Calendar</a>
+                                    
                                 </div>
                             </div>
                         </div>

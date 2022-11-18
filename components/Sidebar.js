@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from 'react'
 import { signOut, useSession } from "next-auth/react";
+import QuesModel from './QuesModel';
+import QuestFav from './QuestFav'
 
 
 
@@ -9,6 +11,8 @@ function Sidebar() {
 
     const [position, setPosition] = useState([])
     console.log(position[0]?.localisation, "sssssssssssssssssssss")
+
+    const [questions, setQuestions] = useState([])
 
 
 
@@ -30,12 +34,29 @@ function Sidebar() {
         fetchposition();
     }, []);
 
-    
+
+    useEffect(() => {
+        const fetchQuestion = async () => {
+            const response = await fetch("/api/favQuestions?user=" + session.user.email, {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+            });
+
+            const responseData = await response.json();
+            setQuestions(responseData);
 
 
-   
+        };
 
-    
+        fetchQuestion();
+    }, []);
+
+
+
+
+
+
+
 
 
 
@@ -57,10 +78,10 @@ function Sidebar() {
                 </div>
                 <div className="text-center px-3 pb-6 pt-2">
                     <h3 className="text-black text-sm bold font-sans">Welcome,  {session?.user?.name}</h3>
-                    <p className="mt-2 font-sans font-light text-black">Hello, Be ready to create your team!</p>
+
                 </div>
                 <div className=" px-6">
-                    
+
                     <div className="flex items-center mt-4 text-gray-700">
                         <svg className="h-6 w-6 fill-current" viewBox="0 0 512 512">
                             <path d="M256 32c-88.004 0-160 70.557-160 156.801C96 306.4 256 480 256 480s160-173.6 160-291.199C416 102.557 344.004 32 256 32zm0 212.801c-31.996 0-57.144-24.645-57.144-56 0-31.357 25.147-56 57.144-56s57.144 24.643 57.144 56c0 31.355-25.148 56-57.144 56z" />
@@ -76,15 +97,40 @@ function Sidebar() {
                 </div>
             </div>
 
+            <div className="hidden md:flex bg-white text-black/70 rounded-lg overflow-hidden flex-col space-y-2 pt-2.5 h-96 sticky top-1 border border-gray-300 ">
+                <div className="text-center overflow-auto md:h-[600px]">
+                    <ul className=" flex flex-col gap-3">
+                        {questions.map((question) => (
+
+                            <QuestFav question={question} key={question._id}  />
+
+                        ))}
 
 
 
 
 
-            
-            
 
-            
+
+
+
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
 
 
         </div>

@@ -10,11 +10,10 @@ export default async function handler(req, res) {
 
   const { db } = await connectToDatabase();
 
-
   if (method === "DELETE") {
     try {
-      await db.collection("questions").deleteOne({ _id: new ObjectId(id) });
-      res.status(200).json({ message: "The question has been deleted!!" });
+      await db.collection("players").deleteOne({ _id: new ObjectId(id) });
+      res.status(200).json({ message: "The player has been deleted!!" });
     } catch (error) {
       res.status(500).json(error);
     }

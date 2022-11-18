@@ -8,7 +8,15 @@ function QuesModel({ question, postQus, setPostQus }) {
 
     const { data: session, status } = useSession();
 
-    
+    const deletequestion = async () => {
+
+        const response = await fetch(`/api/questions/${question._id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" },
+        });
+        setPostQus(!postQus)
+
+    }
 
 
     const [position, setPosition] = useState([])
@@ -35,36 +43,7 @@ function QuesModel({ question, postQus, setPostQus }) {
     }, []);
 
 
-    const postFavQuestion = async (e) => {
-        e.preventDefault();
-
-        const response = await fetch("/api/favQuestions", {
-            method: "Post",
-            body: JSON.stringify({
-                inputTitle: question.inputTitle,
-                inputQuestion: question.inputQuestion,
-                position: position[0]?.localisation,
-                username: session.user.name,
-                userImg: session.user.image,
-                email: session.user.email,
-                userId: session.user.id,
-                createdAt: new Date().toString(),
-
-            }),
-            headers: {
-                "Content-Type": "application/json",
-            },
-
-
-        })
-        const responseData = await response.json();
-
-
-        console.log(responseData);
-
-        
-
-    }
+    
 
 
 
@@ -84,7 +63,7 @@ function QuesModel({ question, postQus, setPostQus }) {
                         <div className=" flex flex-row justify-between h-8 w-full rounded-t-lg border-b-2 border-slate-300 bg-slate-100 pl-[90px] shadow-lg">
                             <small className="my-auto flex  items-center text-xl font-semibold tracking-tight text-slate-700"><p className=' font-light '>Title:</p> {question.inputTitle}</small>
                             <small className="my-auto flex  items-center text-xl font-light tracking-tight text-slate-700"><p className=' font-semibold'>User:</p> {question.username}</small>
-                            <button className=' hover:bg-red-400 rounded-full flex py-1 px-1 active:scale-90 transition duration-150  ' onClick={postFavQuestion}><GrFavorite size={22}/></button>
+                            
                         </div>
                         
                     </div>
@@ -98,20 +77,14 @@ function QuesModel({ question, postQus, setPostQus }) {
                             </svg>
                             <h1 className="px-2 text-xs">{question.position}</h1>
                         </div>
-                        
+                        <button className='ml-[10%] hover:bg-gray-400 rounded-2xl active:scale-90 transition duration-150 ' onClick={deletequestion}><RiDeleteBin6Line color='black' size={20} /></button>
                     </div>
                     {/* <!-- circle --> */}
                     <div className="absolute top-2 left-6 h-16 w-16 rounded-full border-2 border-white shadow-md">
                         <img className="rounded-full  w-full h-full " src="question2.png" alt="" />
                     </div>
 
-                    <div className="mb-4">
-
-                        <label className="block text-grey-darker text-sm font-bold mb-2 text-white text-left  ">answer:</label>
-                        <input className=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                            name="inputanswer"  id="inputanswer" placeholder="whrite your answer" required />
-
-                    </div>
+                    
 
                 </div>
 

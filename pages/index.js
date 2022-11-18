@@ -1,14 +1,10 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Navbar from '../layouts/Navbar'
-import Login from '../components/Login'
-import { getProviders, signIn, useSession, signOut, getSession } from "next-auth/react";
-import LoginMobile from '../components/LoginMobile';
+
+
+
 
 import About from './About'
-import HowWork from '../layouts/HowWork'
-import Footer from '../layouts/Footer'
-import AboutUsTele from '../layouts/AboutUsTele'
+
 
 
 const Home = () => {
