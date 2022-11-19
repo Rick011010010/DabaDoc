@@ -73,35 +73,7 @@ export default function SignIn({ providers }) {
 
 
 
-            {/* <div className=" top-64 md:top-96 absolute 2xl:top-0  h-56 h-70  flex flex-col justify-around py-1 w-[40%] mx-[20%] bg-gradient-to-r from-gray-300" >
-
-                <div className=" flex flex-row justify-around">
-                    <label htmlFor="" className=" hidden xl:flex">Enter a Valid Email</label>
-                    <input type="text" className=" rounded-2xl py-2 xl:hidden  " placeholder='Enter a Valid Email' name='email'  value={email} required  onChange={e => setEmail(e.target.value)} />
-                    <input type="text" className=" rounded-2xl py-2 hidden xl:flex  " value={email} name='email' required  onChange={e => setEmail(e.target.value)} />
-
-                </div>
-
-                <div className=" flex flex-row justify-around">
-                    <label htmlFor="" className=" pr-8 hidden xl:flex">Enter Password</label>
-                    <input type="text" className=" rounded-2xl py-2 xl:hidden " placeholder='Enter Password' id="password" required  value={password} name="password" onChange={e => setPassword(e.target.value)} />
-                    <input type="text" className=" rounded-2xl py-2 hidden xl:flex  " name="password" id="password" value={password} required onChange={e => setPassword(e.target.value)} />
-                </div>
-                <div className=" flex flex-row justify-around">
-                    <label htmlFor="" className=" pr-6 xl:flex hidden">Repeat Password</label>
-                    <input type="text" className=" rounded-2xl py-2 xl:hidden " placeholder='Repeat Password' id="password" required  name="password" onChange={e => setPassword(e.target.value)} />
-                    <input type="text" className=" rounded-2xl py-2 hidden xl:flex  "  name="password" id="password" required onChange={e => setPassword(e.target.value)} />
-                </div>
-
-                <p className='text-red-400' >{message}</p>
-
-                <button onClick={(e) => signUpUser(e)}> Register </button>
-
-                <button onClick={(e) => signInUser(e)}> sign in </button>
-
-
-
-            </div> */}
+            
 
 
             <div className="min-h-screen bg-[#000300] flex justify-center items-center">
